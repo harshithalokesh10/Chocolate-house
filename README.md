@@ -27,7 +27,7 @@ Clone the repository:
 
 bash
 Copy code
-git clone https://github.com/your-username/chocolate-house.git
+git clone https://github.com/harshithalokesh10/chocolate-house.git
 cd chocolate-house
 Create a virtual environment:
 
