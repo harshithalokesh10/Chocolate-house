@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Customer Feedback</title>
+</head>
+<body>
+
+
+
+    <h2>Customer Feedback</h2>
+    <form method="POST">
+        <input type="text" name="customer_name" placeholder="Customer Name" required>
+        <input type="text" name="flavor_suggestion" placeholder="Flavor Suggestion">
+        <input type="text" name="allergy_concerns" placeholder="Allergy Concerns">
+        <button type="submit">Submit Feedback</button>
+    </form>
+    <h3>Feedback</h3>
+    <ul>
+
+        
+        {% for fb in feedback %}
+            <li>{{ fb['customer_name'] }} suggested "{{ fb['flavor_suggestion'] }}" (Allergy: {{ fb['allergy_concerns'] }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

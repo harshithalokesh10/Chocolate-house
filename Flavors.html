@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <title>Seasonal Flavors</title>
+</head>
+<body>
+
+
+
+    <h2>Seasonal Flavors</h2>
+    <form method="POST">
+        <input type="text" name="name" placeholder="Flavor Name" required>
+        <input type="text" name="description" placeholder="Description">
+        <input type="date" name="available_until" placeholder="Available Until">
+        <button type="submit">Add Flavor</button>
+    </form>
+    <h3>Current Flavors</h3>
+    <ul>
+        {% for flavor in flavors %}
+            <li>{{ flavor['name'] }} - {{ flavor['description'] }} (Available Until: {{ flavor['available_until'] }})</li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>
